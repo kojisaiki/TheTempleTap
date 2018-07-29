@@ -108,6 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1351b9eeb6f0f42d78e139c0e55f8aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbPictures:
+  - {fileID: 21300000, guid: 370eb323b3511415989981fb4f1c5898, type: 3}
+  - {fileID: 21300000, guid: 158e316f181b742f5a3d03348a7f792a, type: 3}
+  - {fileID: 21300000, guid: f0990a6610e7146138a477c6d1b927ac, type: 3}
 --- !u!114 &114409425418320920
 MonoBehaviour:
   m_ObjectHideFlags: 1

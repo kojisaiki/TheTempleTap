@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 
 	private DateTime lastDateTime;
 
-	private int[] nextScoreTable = new int[] {10, 10, 10};
+	private int[] nextScoreTable = new int[] {10, 100, 1000};
 
 	// Use this for initialization
 	void Start () {
@@ -76,22 +76,37 @@ public class GameManager : MonoBehaviour {
 			UnityEngine.Random.Range (-140.0f, -500.0f),
 			0f
 		);
+
+		int kind = UnityEngine.Random.Range (0, templeLevel + 1);
+		switch (kind) {
+		case 0:
+				orb.GetComponent<OrbManager> ().SetKind (OrbManager.ORB_KIND.BLUE);
+				break;
+		case 1:
+				orb.GetComponent<OrbManager> ().SetKind (OrbManager.ORB_KIND.GREEN);
+				break;
+		case 2:
+				orb.GetComponent<OrbManager> ().SetKind (OrbManager.ORB_KIND.PURPLE);
+				break;
+		}
 	}
 
-	public void GetOrb () {
-		score += 1;
+	public void GetOrb (int getScore) {
+		if (score < nextScore) {
+			score += getScore;
 
-		// Prevent count up over the border of level up.
-		if (score > nextScore) {
-			score = nextScore;
-		}
+			// Prevent count up over the border of level up.
+			if (score > nextScore) {
+				score = nextScore;
+			}
 
-		TempleLevelUp();
-		RefreshScoreText ();
-		imageTemple.GetComponent<TempleManager> ().SetTempleScale (score, nextScore);
+			TempleLevelUp();
+			RefreshScoreText ();
+			imageTemple.GetComponent<TempleManager> ().SetTempleScale (score, nextScore);
 
-		if ((score == nextScore) && (templeLevel == MAX_LEVEL)) {
-			ClearEffect ();
+			if ((score == nextScore) && (templeLevel == MAX_LEVEL)) {
+				ClearEffect ();
+			}
 		}
 
 		currentOrb--;
