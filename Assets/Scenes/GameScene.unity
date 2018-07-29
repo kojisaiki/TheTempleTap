@@ -839,6 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbPrehab: {fileID: 1417591983856790, guid: 39582dc610dc1403d84310a8591c706f, type: 2}
   canvasGame: {fileID: 1080444753}
+  textScore: {fileID: 1824239057}
 --- !u!4 &1953114253
 Transform:
   m_ObjectHideFlags: 0
