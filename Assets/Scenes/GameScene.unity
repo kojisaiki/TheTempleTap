@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 312991133}
   - component: {fileID: 312991135}
   - component: {fileID: 312991134}
+  - component: {fileID: 312991136}
   m_Layer: 5
   m_Name: ImageMokugyo
   m_TagString: Untagged
@@ -251,6 +252,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 312991132}
   m_CullTransparentMesh: 0
+--- !u!95 &312991136
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312991132}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90e4be7b76aa44361ae8c44e568d8433, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +900,7 @@ MonoBehaviour:
   canvasGame: {fileID: 1080444753}
   textScore: {fileID: 1824239057}
   imageTemple: {fileID: 663247369}
+  imageMokugyo: {fileID: 312991132}
   getScoreSE: {fileID: 8300000, guid: 1e33413a4070f445f8e067f9c9a9dda8, type: 3}
   levelUpSE: {fileID: 8300000, guid: 51fa43f5b6f1b45fa8ec4117de852ebf, type: 3}
   clearSE: {fileID: 8300000, guid: 55ef829b8dbee4600a76657903f17ec4, type: 3}
