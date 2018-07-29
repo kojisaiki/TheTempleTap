@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 1271306945}
   - component: {fileID: 1271306947}
   - component: {fileID: 1271306946}
+  - component: {fileID: 1271306948}
   m_Layer: 5
   m_Name: ImageBonz
   m_TagString: Untagged
@@ -641,6 +642,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1271306944}
   m_CullTransparentMesh: 0
+--- !u!95 &1271306948
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1271306944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c47b5be4176041ac9d4e23d33c68545, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1574744173
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +906,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 907cd63fbcc8849b58fcf3341d78ea34, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

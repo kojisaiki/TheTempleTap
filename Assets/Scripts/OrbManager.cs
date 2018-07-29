@@ -41,7 +41,7 @@ public class OrbManager : MonoBehaviour {
 			gameManager.GetComponent<GameManager> ().GetOrb (5);
 			break;
 		case ORB_KIND.PURPLE:
-			gameManager.GetComponent<GameManager> ().GetOrb (20);
+			gameManager.GetComponent<GameManager> ().GetOrb (30);
 			break;
 		}
 		Destroy (this.gameObject);
