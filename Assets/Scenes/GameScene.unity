@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 663247370}
   - component: {fileID: 663247372}
   - component: {fileID: 663247371}
+  - component: {fileID: 663247373}
   m_Layer: 5
   m_Name: ImageTemple
   m_TagString: Untagged
@@ -459,6 +460,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 663247369}
   m_CullTransparentMesh: 0
+--- !u!114 &663247373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 663247369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fe049058c8041f0b53fc4cf39f694e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  templePictures:
+  - {fileID: 21300000, guid: 6e6d4e2c1636d4e5398f088b04db17a2, type: 3}
+  - {fileID: 21300000, guid: 670f2d9a1410d487f9f40accefdd59f3, type: 3}
+  - {fileID: 21300000, guid: d6afd49a5b07b4188b88387ba85e6686, type: 3}
 --- !u!1 &1080444753
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,8 +854,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbPrehab: {fileID: 1417591983856790, guid: 39582dc610dc1403d84310a8591c706f, type: 2}
+  smokePrehab: {fileID: 1673523674478830, guid: 689ba748c0ea4469b9281ec0189cebdf,
+    type: 2}
+  kusudamaPrehab: {fileID: 1631399820540408, guid: 20f25181529a64beeb9cae76ba1b802c,
+    type: 2}
   canvasGame: {fileID: 1080444753}
   textScore: {fileID: 1824239057}
+  imageTemple: {fileID: 663247369}
 --- !u!4 &1953114253
 Transform:
   m_ObjectHideFlags: 0
