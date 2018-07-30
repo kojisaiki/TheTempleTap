@@ -7,8 +7,8 @@ using System;
 
 public class GameManager : MonoBehaviour {
 
-	private const int MAX_ORB = 10;
-	private const int RESPAWN_TIME = 5;
+	private const int MAX_ORB = 30;
+	private const int RESPAWN_TIME = 30;
 	private const int MAX_LEVEL = 2;
 
 	private const string KEY_SCORE = "SCORE";
@@ -37,9 +37,11 @@ public class GameManager : MonoBehaviour {
 
 	private DateTime lastDateTime;
 
-	private int[] nextScoreTable = new int[] {10, 100, 1000};
+	private int[] nextScoreTable = new int[] {100, 1000, 10000};
 
 	private AudioSource audioSource;
+
+	private int numOfOrb;
 
 	// Use this for initialization
 	void Start () {
@@ -57,6 +59,38 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		while (numOfOrb > 0) {
+			Invoke ("CreateNewOrb", 0.1f * numOfOrb);
+			numOfOrb--;
+		}
+	}
+
+	void OnApplicationPause (bool pauseStatus) {
+		if (pauseStatus) {
+			// App goes background.
+		} else {
+			// App backs from background.
+
+			// Restore time.
+			string time = PlayerPrefs.GetString (KEY_TIME, "");
+			if (time == "") {
+				lastDateTime = DateTime.UtcNow;
+			} else {
+				long temp = Convert.ToInt64 (time);
+				lastDateTime = DateTime.FromBinary (temp);
+			}
+
+			numOfOrb = 0;
+			TimeSpan timeSpan = DateTime.UtcNow - lastDateTime;
+			if (timeSpan >= TimeSpan.FromSeconds (RESPAWN_TIME)) {
+				while (timeSpan > TimeSpan.FromSeconds (RESPAWN_TIME)) {
+					if (numOfOrb < MAX_ORB) {
+						numOfOrb++;
+					}
+					timeSpan -= TimeSpan.FromSeconds (RESPAWN_TIME);
+				}
+			}
+		}
 	}
 
 	public void CreateNewOrb () {
