@@ -74,8 +74,8 @@ public class GameManager : MonoBehaviour {
 		GameObject orb = (GameObject)Instantiate (orbPrehab);
 		orb.transform.SetParent(canvasGame.transform, false);
 		orb.transform.localPosition = new Vector3 (
-			UnityEngine.Random.Range (-300.0f, 300.0f),
-			UnityEngine.Random.Range (-140.0f, -500.0f),
+			UnityEngine.Random.Range (-100.0f, 100.0f),
+			UnityEngine.Random.Range (-300.0f, -450.0f),
 			0f
 		);
 
@@ -91,9 +91,9 @@ public class GameManager : MonoBehaviour {
 				orb.GetComponent<OrbManager> ().SetKind (OrbManager.ORB_KIND.PURPLE);
 				break;
 		}
-	}
 
-	public void GetOrb (int getScore) {
+		orb.GetComponent<OrbManager> ().FlyOrb ();
+
 		audioSource.PlayOneShot (getScoreSE);
 
 		AnimatorStateInfo stateInfo = imageMokugyo.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0);
@@ -102,6 +102,9 @@ public class GameManager : MonoBehaviour {
 		} else {
 			imageMokugyo.GetComponent<Animator> ().SetTrigger ("isGetScore");
 		}
+	}
+
+	public void GetOrb (int getScore) {
 
 		if (score < nextScore) {
 			score += getScore;
