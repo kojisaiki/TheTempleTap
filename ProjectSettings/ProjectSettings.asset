@@ -153,6 +153,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.saikou9901.TheTempleTap
     Standalone: com.Company.ProductName
+    iOS: com.saikou9901.TheTempleTap
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
